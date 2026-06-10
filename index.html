@@ -285,7 +285,7 @@
 <div class="hero">
   <div class="hero-glow" aria-hidden="true"></div><div class="bubbles" id="bubbles" aria-hidden="true"></div>
   <section class="hero-poster" id="s-hero">
-    <div class="kicker">Activisme positif · L'Océan commence ici</div>
+    <div class="kicker">Activisme positif · Trouvez votre vague</div>
     <h1 class="hero-h1">Découvrez votre moodboard de l'Océan</h1>
     <p class="hero-lead">Quelques questions, et vous révélez <strong>votre team, votre plage et votre façon d'agir</strong> pour l'Océan. Où que vous viviez.</p>
     <button class="btn btn-primary" onclick="startQuiz()">Je découvre ma team →</button>
@@ -426,7 +426,7 @@
 <footer>
   <img class="flogo" src="assets/logo-white.png" alt="Surfrider Foundation">
   <div class="end">act positive. protect the ocean.</div>
-  <div>L'Océan commence ici.</div>
+  <div>Trouvez votre vague.</div>
   <div class="note">Maquette réalisée par l'agence <strong>RISKIT</strong>, recommandation pour Surfrider Foundation Europe. Photos d'une banque libre (à remplacer par la photothèque Surfrider, sans IA) · stats illustratives · envoi, don &amp; jeu-concours simulés. Déclinable EN / ES / DE / PT / NL.</div>
 </footer>
 
@@ -566,7 +566,7 @@ async function buildStory(T,B){
   const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,T.col);g.addColorStop(1,'#0c2238');x.fillStyle=g;x.fillRect(0,0,W,H);
   x.strokeStyle='rgba(255,255,255,.10)';x.lineWidth=6;for(let i=0;i<4;i++){x.beginPath();let yb=200+i*48;x.moveTo(0,yb);for(let xx=0;xx<=W;xx+=60)x.lineTo(xx,yb+Math.sin(xx/120+i)*16);x.stroke();}
   x.textAlign='center';x.textBaseline='alphabetic';
-  x.fillStyle='rgba(255,255,255,.9)';x.font='300 28px Montserrat,sans-serif';x.fillText("L'Océan commence ici",W/2,92);
+  x.fillStyle='rgba(255,255,255,.9)';x.font='300 28px Montserrat,sans-serif';x.fillText("Trouvez votre vague",W/2,92);
   x.fillStyle='#fff';x.font='40px "Bebas Neue",sans-serif';x.fillText("MON MOODBOARD DE L'OCÉAN",W/2,142);
   const hw=820,hh=520,hx=130,hy=180;
   x.save();x.shadowColor='rgba(0,0,0,.35)';x.shadowBlur=26;x.shadowOffsetY=14;x.fillStyle='#fff';rr(x,hx-16,hy-16,hw+32,hh+32,24);x.fill();x.restore();
