@@ -34,7 +34,7 @@
   .nav .srch{background:none;border:0;cursor:pointer;color:var(--navy);display:flex;align-items:center}
   .nav .don{background:var(--orange);color:#fff;font-weight:700;border-radius:30px;padding:11px 20px;font-size:14px;display:flex;align-items:center;gap:8px;white-space:nowrap;transition:transform .15s,background .15s}
   .nav .don:hover{background:#b83713;transform:translateY(-1px)}
-  @media(max-width:900px){.nav ul{display:none}.nav .lg{margin-right:auto}}
+  @media(max-width:900px){.nav ul{display:none}.nav .eco-toggle{margin-left:auto}}
   .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#163a5d 0%,#0c2238 58%,#06182b 100%);display:flex;flex-direction:column;align-items:center;padding:clamp(28px,5vw,52px) clamp(12px,4vw,24px) 64px}
   .hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
   .hero-poster{position:relative;z-index:2;max-width:840px;width:100%;text-align:center;color:#fff;animation:fade .5s ease;padding-bottom:6px}
@@ -214,6 +214,7 @@
   .viral .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
   .viral button{border:0;border-radius:30px;padding:12px 18px;font-weight:700;font-family:'Montserrat';font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .15s}
   .viral button:hover{transform:translateY(-2px)} .viral .wa{background:#25D366;color:#fff}.viral .cp{background:#fff;color:var(--navy)}
+  .viral .ig{background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);color:#fff}
   .share{display:flex;gap:9px;justify-content:center;margin:14px 0 0;flex-wrap:wrap}
   .share button{border:2px solid var(--blue);background:#fff;color:var(--blue);border-radius:30px;padding:10px 16px;font-weight:700;cursor:pointer;font-family:'Montserrat';font-size:13.5px;display:inline-flex;align-items:center;gap:7px;transition:all .15s}
   .share button:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
@@ -230,6 +231,8 @@
   .eco-toggle .sw{width:38px;height:20px;border-radius:20px;background:#cdd9e3;position:relative;transition:background .2s;flex-shrink:0}
   .eco-toggle .sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
   .eco-on .eco-toggle .sw{background:#5C9833}.eco-on .eco-toggle .sw::after{left:20px}
+  .eco-toggle .eco-leaf{width:16px;height:16px;color:#8aa0b3;flex-shrink:0;transition:color .2s}
+  .eco-on .eco-toggle .eco-leaf{color:#5C9833}
   .eco-on *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .eco-on .bubbles,.eco-on .hero-glow{display:none!important}
   .eco-on .hero::after{display:none!important}
@@ -243,8 +246,10 @@
   .eco-on .bic{display:none}
   /* ---- passe responsive mobile ---- */
   @media(max-width:600px){
-    .nav{gap:10px;padding:10px 14px}
-    .nav .don{padding:9px 14px;font-size:13px}
+    .nav{gap:9px;padding:9px 14px}
+    .nav .lg{height:42px}
+    .nav .srch{margin-left:2px}
+    .nav .don{padding:10px 15px;font-size:13px}
     .nav .don svg{width:14px;height:14px}
     .pp-stamp{width:86px;height:86px;padding:6px}
     .pp-stamp b{font-size:15px}.pp-stamp small{font-size:8px;letter-spacing:1px}
@@ -271,7 +276,7 @@
 <nav class="nav">
   <a href="https://www.surfrider.fr"><img class="lg" src="assets/logo-blue.png" alt="Surfrider Foundation"></a>
   <ul><li>Nos engagements<span class="cv">▾</span></li><li>Agir - soutenir<span class="cv">▾</span></li><li>Ressources<span class="cv">▾</span></li><li>L'asso<span class="cv">▾</span></li><li>Contact</li></ul>
-  <button class="eco-toggle" onclick="toggleEco()" aria-label="Activer le mode éco" title="Réduit animations et consommation"><span class="sw"></span><span class="eco-lab">Mode éco</span></button>
+  <button class="eco-toggle" onclick="toggleEco()" aria-label="Activer le mode éco" title="Mode éco : réduit animations et consommation"><svg class="eco-leaf" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13C4 7 9 3 20 3c0 11-4 16-9 16z"/><path d="M9 16c1.6-4 4-6 8-7"/></svg><span class="sw"></span><span class="eco-lab">Mode éco</span></button>
   <button class="srch" aria-label="Rechercher"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></button>
   <a class="don" href="https://donate.surfrider.eu/don/">Faire un don<svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3 1.2 3.5 2 .5-.8 1.5-2 3.5-2 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z"/></svg></a>
 </nav>
@@ -399,6 +404,7 @@
       <h3>Partagez votre moodboard, défiez votre bande</h3>
       <p>Plus on est nombreux, plus l'Océan gagne. <b>Postez ce visuel en story et identifiez @surfrider_france</b> pour valider votre entrée au Lot 2 (catamaran).</p>
       <div class="row">
+        <button class="ig" onclick="shareInsta()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="#fff" stroke="none"/></svg>Story Instagram</button>
         <button class="cp" onclick="saveStory()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A3047" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 12l5 5 5-5"/><path d="M5 21h14"/></svg>Enregistrer l'image</button>
         <button class="wa" onclick="shareWhatsApp()"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.6-4A8 8 0 1 1 20 11.5z"/></svg>Défier mes amis</button>
         <button class="cp" onclick="shareStory()">Partager</button>
@@ -588,6 +594,7 @@ async function buildStory(T,B){
 function saveStory(){let b=storyBlob||(storyDataUrl?dataURLtoBlob(storyDataUrl):null);if(!b){alert('Visuel en cours de génération, réessayez dans un instant.');return;}const url=URL.createObjectURL(b);const a=document.createElement('a');a.href=url;a.download='mon-moodboard-surfrider.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);}
 function dataURLtoBlob(d){const a=d.split(','),m=a[0].match(/:(.*?);/)[1],b=atob(a[1]);let n=b.length,u=new Uint8Array(n);while(n--)u[n]=b.charCodeAt(n);return new Blob([u],{type:m});}
 async function shareStory(){const b=storyBlob||(storyDataUrl?dataURLtoBlob(storyDataUrl):null);if(!b){return;}try{const file=new File([b],'mon-moodboard-surfrider.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],text:shareText()});return;}}catch(e){}saveStory();alert("Image enregistrée, postez-la en story !");}
+async function shareInsta(){const b=storyBlob||(storyDataUrl?dataURLtoBlob(storyDataUrl):null);if(b&&navigator.canShare){try{const f=new File([b],"mon-moodboard-surfrider.png",{type:"image/png"});if(navigator.canShare({files:[f]})){await navigator.share({files:[f],text:shareText()});return;}}catch(e){}}saveStory();alert("Visuel enregistré ! Ouvrez Instagram, créez une story et ajoutez-le. Pensez à identifier @surfrider_france 🌊");window.open("https://www.instagram.com/","_blank");}
 function shareText(){return `Ma team de l'Océan, c'est ${TEAMS[curTeam].name} 🌊 Et toi, t'es quelle team ? surfrider.fr`;}
 function challengeText(){return `Moi je suis ${TEAMS[curTeam].name} 🌊 Et toi, t'es quelle team de l'Océan ? Fais le test 👉 surfrider.fr`;}
 function shareX(){window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(shareText()),'_blank');}
